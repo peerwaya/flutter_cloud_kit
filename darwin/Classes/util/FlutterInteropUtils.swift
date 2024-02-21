@@ -87,6 +87,8 @@ func recordToDictionary(record: CKRecord) -> Dictionary<String, Any?> {
     
     dictionary["recordName"] = record.recordID.recordName;
     dictionary["recordType"] = record.recordType;
+    dictionary["creationDate"] = record.creationDate?.timeIntervalSince1970;
+    dictionary["modificationDate"] = record.modificationDate?.timeIntervalSince1970;
     
     var recordDictionary: [String: Any?] = [:];
     for key in record.allKeys() {
